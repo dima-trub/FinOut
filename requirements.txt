@@ -1,0 +1,12 @@
+Flask
+fastapi
+uvicorn[standard]
+sqlalchemy>=1.4
+asyncpg
+APScheduler
+httpx
+python-dotenv
+requests
+flask_sqlalchemy
+aiosqlite
+aiohttp
