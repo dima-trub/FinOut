@@ -150,7 +150,7 @@ class AsyncMovieDatabase:
         )
 
     async def get_last_10_movie(self) -> List[Dict[str, Optional[str]]]:
-        """Retrieve all movies from the database."""
+        """Retrieve last 10 movies from the database."""
         async with aiosqlite.connect(self.db_name) as db:
             async with db.execute("SELECT * FROM movies ORDER BY updated_at DESC LIMIT 10") as cursor:
                 rows = await cursor.fetchall()
@@ -160,7 +160,7 @@ class AsyncMovieDatabase:
                 ]
 
     async def get_last_movie(self,) -> Optional[Dict[str, Optional[str]]]:
-        """Fetch a movie by its ID asynchronously."""
+        """ Retrieve last  movie ."""
         async with aiosqlite.connect(self.db_name) as db:
             async with db.execute("SELECT * FROM movies ORDER BY updated_at DESC LIMIT 1") as cursor:
                 row = await cursor.fetchone()
